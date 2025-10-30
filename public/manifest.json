@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Google Meet Captions Recorder",
+    "description": "Automatically capture and save Google Meet captions with persistent IndexedDB backups.",
+    "version": "1.0.0",
+    "permissions": ["storage", "scripting", "activeTab"],
+    "host_permissions": ["https://meet.google.com/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://meet.google.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "icons": {
+      "128": "icon.png"
+    },
+    "action": {
+      "default_title": "Meet Captions Recorder",
+      "default_popup": "index.html"
+    }
+  }
+  
